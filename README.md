@@ -1,3 +1,11 @@
+# TODO
+
+1. List the news
+2. User search news by keyword or category
+3. List the top 10 news objects from the news
+4. User chooses object
+5. Display more details about the object
+
 # EboCliProject
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ebo_cli_project`. To experiment with that code, run `bin/console` for an interactive prompt.
