@@ -1,0 +1,2 @@
+class EboCliProject::SOURCES
+end 

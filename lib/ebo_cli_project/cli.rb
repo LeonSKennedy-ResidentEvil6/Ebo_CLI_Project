@@ -1,8 +1,24 @@
-class EboCliProject::Cli
+class EboCliProject::ClI
   
-  def greeting
-    puts 'yoo, this is my cli project cli'
-    puts 'I just added this line in vs code and I want to make sure this is updated in git once it is pushed...'
+  def start
+    puts "welcome to the news api!"
+    EboCliProject::API.get_top_headlines
+  end 
+
+  def menu
+    puts "please select the news you want to see"
+    top_headlines
+    everything
+    sources
+  end 
+
+  def top_headlines
+  end 
+
+  def everything
+  end 
+
+  def sources
   end 
   
 end 

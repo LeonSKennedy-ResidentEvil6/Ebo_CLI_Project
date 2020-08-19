@@ -1,0 +1,2 @@
+class EboCliProject::EVERYTHING
+end 
