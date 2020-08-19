@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative "../lib/environment.rb"
 
-EboCliProject::Cli.new.greeting
+EboCliProject::CLI.new.start
