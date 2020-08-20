@@ -3,7 +3,7 @@
 I want to build a news feed application that show my users recent news article published by over 50,000 different sources large and small. Using this app, the user can:
 
 - Starts the app and is greeted with a list of options on the menu
-- Chooses an artile and is shown the detail of that article
+- Chooses an article and is shown the detail of that article
 - Then either go back to the menu and choose another article or exit the app
 
 
