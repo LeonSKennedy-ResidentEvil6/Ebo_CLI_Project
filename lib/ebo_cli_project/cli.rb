@@ -12,13 +12,5 @@ class EboCliProject::ClI
     sources
   end 
 
-  def top_headlines
-  end 
-
-  def everything
-  end 
-
-  def sources
-  end 
   
 end 

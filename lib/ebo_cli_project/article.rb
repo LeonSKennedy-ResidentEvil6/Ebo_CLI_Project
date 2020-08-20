@@ -1,4 +1,4 @@
-class EboCliProject::HEADLINES
+class EboCliProject::ARTICLE
     attr_accessor :headlines
     
     def self.news_from_api(headline)

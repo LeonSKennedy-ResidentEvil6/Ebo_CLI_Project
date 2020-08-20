@@ -1,0 +1,51 @@
+1. Identify my objects
+
+I want to build a news feed application that show my users recent news article published by over 50,000 different sources large and small. Using this app, the user can:
+
+- Starts the app and is greeted with a list of options on the menu
+- Chooses an artile and is shown the detail of that article
+- Then either go back to the menu and choose another article or exit the app
+
+
+2. Identity objects' responsibilities (each object is only responsible for one thing)
+
+Api
+- validate_key
+- custom_error_wrong_key
+- newsapi
+
+Artile
+- source
+- author
+- title
+- description
+- url
+- urlToImage
+- publishedAt
+- content
+
+Cli
+- start
+- menu
+- user_input
+- exit
+
+3. Design interface
+
+validate api key
+input api key
+return custom error if invalid api key
+call class method newsapi on api class
+parse response, iterate and scrap returned json files
+start the app
+puts greeting
+ask user for input
+display menu
+user input
+return input detail
+user return to the menu
+user input again
+
+
+
+
