@@ -25,26 +25,62 @@ Artile
 - content
 
 Cli
+- user_input
 - start
 - menu
-- user_input
+- index
+- index open
 - exit
 
-3. Design interface
+3. Design CLI interface pattern
 
+3.1.
+
+Prompting the user for input: What would you like to do?
+
+Defining the input interface: I accept: article, index, index open, exit
+
+Accepting user input by yielding to a prompt and waiting patiently for the user to press enter. If the user never enters anything, the program will wait at this state forever until the process is otherwise terminated.
+
+Taking the user input and executing the appropriate sub-routine or procedure that represents that feature. If a user enters 'help', the program should print the help instructions.
+
+Once that feature terminates, the program is back at the start of the main loop.
+
+3.2. example (using program loop)
+
+CLI programs have to continue running and accepting input from the user until they are explicitly exited through sending a termination signal to the program by pressing CTRL+C , or by telling the program to quit or exit through some sort of input.
+
+$ bin/controller
+
+Hi! Welcome to news feed
+
+What would you like to do?
+Please enter: article for today's news, index to read an article, open follow by index number to open an article from the publisher's website, exist to exit the app
+
+What would you like to do?
+article↵
+
+Today's breaking news article:
+1. 
+2.
+3.
+
+Please enter the article number you would like to read:
+1↵
+
+To open an article's url in your brower, enter index number of the article follow by open
+1 open↵
+
+This article is currently open in your brower from the publisher's website
+
+To exit the app, enter exit
+exit↵
+
+
+4. Extra
 validate api key
 input api key
 return custom error if invalid api key
-call class method newsapi on api class
-parse response, iterate and scrap returned json files
-start the app
-puts greeting
-ask user for input
-display menu
-user input
-return input detail
-user return to the menu
-user input again
 
 
 
