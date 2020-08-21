@@ -1,10 +1,10 @@
 1. Identify my objects
 
-I want to build a news feed application that show my users recent news article published by over 50,000 different sources large and small. Using this app, the user can:
+I want to build a news feed application that show my users recent news article published by the New York Times, bloomberg, and the Guardian. Using this app, the user can:
 
 - Starts the app and is greeted with a list of options on the menu
-- Chooses an article and is shown the detail of that article
-- Then either go back to the menu and choose another article or exit the app
+- Search an article and is shown the detail of that article
+- Then either go back to the menu and search again or exit the app
 
 
 2. Identity objects' responsibilities (each object is only responsible for one thing)
@@ -14,7 +14,7 @@ Api
 - custom_error_wrong_key
 - newsapi
 
-Artile
+Article
 - source
 - author
 - title

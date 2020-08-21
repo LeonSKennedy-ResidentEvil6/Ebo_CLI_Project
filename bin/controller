@@ -2,4 +2,4 @@
 
 require_relative "../lib/environment.rb"
 
-EboCliProject::CLI.new.start
+NewsCliProject::Cli.new.start

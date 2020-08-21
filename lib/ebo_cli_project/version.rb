@@ -1,3 +1,3 @@
-module EboCliProject
+module NewsCliProject
   VERSION = "0.1.0"
 end
