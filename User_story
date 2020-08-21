@@ -1,21 +1,25 @@
 1. Identify my objects
 
-I want to build a news feed application that show my users recent news article published by the New York Times, bloomberg, and the Guardian. Using this app, the user can:
+I want to build a news feed application that shows my users recent news article. Using this app, the user can:
 
 - Starts the app and is greeted with a list of options on the menu
-- Search an article and is shown the detail of that article
+- Search news article by title/subject, country, keyword, or news sites
+- Open an article and is shown the content of that article
 - Then either go back to the menu and search again or exit the app
 
 
 2. Identity objects' responsibilities (each object is only responsible for one thing)
 
-Api
+Api_Service
 - validate_key
-- custom_error_wrong_key
+- custom_error_wrong_ApiKey
 - newsapi
+- apiKey
 
 Article
 - source
+- domains
+- pageSize
 - author
 - title
 - description
@@ -83,5 +87,18 @@ input api key
 return custom error if invalid api key
 
 
+Useful url:
+
+## UK news API
+https://newsapi.org/s/uk-news-api
+
+## domain: cnn.com api
+https://newsapi.org/v2/everything?domains=cnn.com&apiKey=f5ab1ac1a2af4fa98ad39c97e7e4bf34&pageSize=50
+
+## domain: foxnews.com api
+https://newsapi.org/v2/everything?domains=foxnews.com&apiKey=f5ab1ac1a2af4fa98ad39c97e7e4bf34&pageSize=50
+
+## qinTitle: apple api
+https://newsapi.org/v2/everything?qInTitle=apple&apiKey=f5ab1ac1a2af4fa98ad39c97e7e4bf34&pageSize=50
 
 

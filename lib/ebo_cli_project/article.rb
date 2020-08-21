@@ -1,26 +1,39 @@
-class NewsCliProject::Article
+class EboCliProject::Article
     
-    attr_accessor :source, :author, :title, :description, :url, :urltoimage, :publishedAt, :content
+    attr_accessor :source, :name, :author, :title, :description, :url, :urltoimage, :publishedAt, :content
 
     @@all = []
 
-    def initialize(article)
-        article.each do |k, v|
-            self.send("#{k}=", v) if self.respond_to?(k)
+    def initialize(articles_hash)
+        articles_hash.each do |key, value|
+            # return false if attribute is nil/null in json
+            if self.respond_to?(key)
+            self.send("#{key}=", value)
+            end 
         end 
         @@all << self
-    end 
-
-    def update(article)
-        article.each do |k, v|
-            # if attr_accessor does not have property, returns error
-            self.send("#{k}=", v) if self.respond_to?(k)
-        end 
     end 
 
     def self.all
         @@all 
     end 
 
+    def self.list_articles
+        EboCliProject::ApiService.all.each.with_index(1) do |article, index|
+            puts "#{index}. #{article.title}"
+        end 
+    end 
+
+    def self.select_article_by_index(num)
+        EboCliProject::ApiService.all[num.to_i - 1]
+    end 
+
+    def self.find_open_article_url(num)
+        EboCliProject::ApiService.all.each.with_index(1) do |article, index|
+            if num.to_i - 1 == index
+                article.url
+            end 
+        end 
+    end 
 
 end 
