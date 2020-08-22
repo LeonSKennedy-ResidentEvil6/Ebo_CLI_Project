@@ -1,4 +1,4 @@
-class EboCliProject::Cli
+class NewsFeedProject::Cli
   
     def start
         puts "welcome to your news search app!"
@@ -6,53 +6,78 @@ class EboCliProject::Cli
     end 
 
     def menu
-        help
+        
+        puts "----------------------------------"
+        puts "what would you like to do?"
+        puts "type 'help' for a list of commands"
+        puts "----------------------------------"
+        
         input = ''
+        
+        while input != 'exit' do
 
-          while input != 'exit' do
-              input = gets.strip
-
-              puts ""
-              puts "what news would you like to search for?"
-              puts ""
-
-              case input
-              when "help"
-                help 
-              when "query"
-                list_articles
-              when "#{num}"
-                select_article_by_index(num)
-              when "openNum"
-                find_open_article_url(num)
-              end 
+          input = gets.strip
+          case input 
+          when "help"
+            help
+          when "search"
+            search_article
+          when "list articles"
+            list_articles
+          when "num"
+            open_article
+          when "numUrl"
+            open_article_by_url
+          when "clear"
+            clear_articles
           end 
+        end 
       end 
 
-            EboCliProject::ApiService.search_news_by_article_title(input)
-            # offset is set to 1 to skip first and second keys - status and totalResults
-            EboCliProject::Article.all.each.with_index(2) do |articles, index|
-              puts "#{index}. #{articles.title}"
-            end 
+      #method
 
-            puts "which article would you like to read?"
+        def search_article
+          puts "type a keyword to search: "
+          keyword = gets.strip
+          NewsFeedProject::ApiService.search_news_by_article_title(keyword)
+        end 
+            
+        def list_articles
+          NewsFeedProject::Article.all.each.with_index(1) do |articles, index|
+            index_plus = index + 1
+            puts "#{index_plus}. #{articles.title}"
+          end 
+        end 
+              
 
-            input = gets.strip
-            # user query single artcile
-            article = EboCliProject::Article.all[input.to_i - 1]
+        def open_article
+          article = NewsFeedProject::Article.select_article_by_index(input)
+          puts "Source: #{article.content}"
+          puts "Author: #{article.author}"
+          puts "Title: #{article.title}"
+          puts "Description: #{article.description}"
+          puts "url: #{article.url}"
+          puts "Image: #{article.urlToImage}"
+          puts "Published Date: #{article.publishedAt}"
+          puts "content: #{article.content}"
+        end 
 
-            EboCliProject::ApiService.open_news_article(article)
+        def open_publisher
+          NewsFeedProject::Article.open_publisher(num)
+        end 
 
-            puts "Article is opened : #{article.content}"
+        def clear_articles
+          NewsFeedProject::Article.clear
+        end 
 
-    end 
-
-    def help
-        puts "To search for any news headlines, enter a keyword."
+      def help
+        puts "To search news, enter 'search'."
+        puts "To list all articles, enter 'list article'."
         puts "To read an article, enter a number."
         puts "To open an article from the publisher's website, enter 'open' follow by a number"
+        puts "To clear search result, enter 'clear'."
         puts "To exit the app, enter 'exit'."
-    end 
-
-    
+      end 
+       
+  
 end 
