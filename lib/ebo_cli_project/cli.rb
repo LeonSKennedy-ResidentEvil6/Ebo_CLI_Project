@@ -27,6 +27,8 @@ class NewsFeedProject::Cli
             list_articles_by_title
           when "open an article"
             open_article
+          when "quit"
+            input == "exit"
           else 
             puts "invalid input. please enter again."
           end 
@@ -64,25 +66,28 @@ class NewsFeedProject::Cli
             puts "End of the article. What would you like to do next? "
             puts "To open the publisher's URL, enter 'open publisher'."
             puts "To go back to menu, enter 'menu'."
-            puts "To exit the app, enter 'exit'."
+            puts "To exit the app, enter 'quit'."
 
             input = ''
 
             while input != "exit" do
-              input = gets.chomp.strip
-              if input == "open publisher"
-                puts "The publisher's website is opened in your browser."
-                system("open", #{article.url})
-              elsif input == "menu"
-                menu
-              else 
-                "invalid input. Please enter again"
-              end 
-            end 
-        end 
+                input = gets.chomp.strip
+                if input == "open publisher"
+                  puts "The publisher's website is opened in your browser."
+                  system("open", "#{article.url}")
+                elsif input == "menu"
+                  menu
+                elsif input == "exit"
+                else
+                  "invalid input. Please enter again"
+                end
+             end 
+         end 
 
         def clear_articles
           NewsFeedProject::Article.clear
+          puts "result has been cleared."
+          menu
         end
 
       def help
@@ -90,7 +95,7 @@ class NewsFeedProject::Cli
         puts "To clear search result, enter 'clear'."
         puts "To view list of articles, enter 'list articles'."
         puts "To see article detail, enter 'open an article'."
-        puts "To exit the app, enter 'exit'."
+        puts "To exit the app, enter 'quit'."
       end 
        
   
