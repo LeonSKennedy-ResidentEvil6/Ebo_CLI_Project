@@ -2,12 +2,10 @@ class NewsFeedProject::ApiService
 
     
         @@url = 'http://newsapi.org/v2/everything?'\
-        'domains=cnn.com&'\
         'qinTitle='
 
         @@parameters = '&'\
         'from=2020-08-21&'\
-        'sortBy=popularity&'\
         'pageSize=10&'\
         'apiKey='
 

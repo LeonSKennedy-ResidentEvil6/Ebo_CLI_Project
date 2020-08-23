@@ -3,18 +3,22 @@
 I want to build a news feed application that shows my users recent news article. Using this app, the user can:
 
 - Starts the app and is greeted with a list of options on the menu
-- Search news article by title/subject, country, keyword, or news sites
-- Open an article and is shown the content of that article
-- Then either go back to the menu and search again or exit the app
+- Search news article by keyword in the title
+- Select article and is shown the content of that article
+- Open an article's publisher's url
+- Go back to menu
+- Search article again
+- Exit the app
 
 
 2. Identity objects' responsibilities (each object is only responsible for one thing)
 
 Api_Service
+- url
+- apiKey
 - validate_key
 - custom_error_wrong_ApiKey
-- newsapi
-- apiKey
+- Parse data from api
 
 Article
 - source
@@ -29,11 +33,13 @@ Article
 - content
 
 Cli
-- user_input
 - start
 - menu
-- index
-- index open
+- user_input
+- find articles
+- list articles
+- open articles
+- open publisher
 - exit
 
 3. Design CLI interface pattern
