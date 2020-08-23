@@ -28,7 +28,7 @@ class NewsFeedProject::Cli
           when "open an article"
             open_article
           when "quit"
-            input == "exit"
+            exit
           else 
             puts "invalid input. please enter again."
           end 
@@ -77,9 +77,10 @@ class NewsFeedProject::Cli
                   system("open", "#{article.url}")
                 elsif input == "menu"
                   menu
-                elsif input == "exit"
+                elsif input == "quit"
+                  exit
                 else
-                  "invalid input. Please enter again"
+                  puts "invalid input. Please enter again"
                 end
              end 
          end 
