@@ -108,3 +108,9 @@ https://newsapi.org/v2/everything?domains=foxnews.com&apiKey=f5ab1ac1a2af4fa98ad
 https://newsapi.org/v2/everything?qInTitle=apple&apiKey=f5ab1ac1a2af4fa98ad39c97e7e4bf34&pageSize=50
 
 
+4. Ideas for improvement
+
+- Immediate show a list of articles after searching
+- Show full content in the terminal
+- Install gem to interact with CLI to keep it 'clean'
+- Add details to make it more presentable such as space and symbols
