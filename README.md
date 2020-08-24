@@ -1,16 +1,31 @@
-# TODO
+# News feed CLI App in Ruby
 
-1. List the news
-2. User search news by keyword or category
-3. List the top 10 news objects from the news
-4. User chooses object
-5. Display more details about the object
+This news feed app is meant to search news articles from various sources on the Internet. In this app, a user can:
 
-# EboCliProject
+- Starts the app and is greeted with a list of options on the menu
+- Search news articles by keyword in the title
+- List articles with the keyword
+- Select article and is shown the detail of that article
+- Open an article's publisher's website
+- Go back to menu
+- Clear search result
+- Search article again
+- Exit the app
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ebo_cli_project`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Prerequisites
 
-TODO: Delete this and the text above, and describe your gem
+Ruby 2.5+ must be already installed:
+
+- apt (Debian or Ubuntu)
+$ sudo apt-get install ruby-full
+
+yum (CentOS, Fedora, or RHEL)
+$ sudo yum install ruby
+
+snap (Ubuntu or other Linux distributions)
+$ sudo snap install ruby --classic
+
+For more details on how to install Ruby, go to: https://www.ruby-lang.org/en/documentation/installation/
 
 ## Installation
 
@@ -28,13 +43,9 @@ Or install it yourself as:
 
     $ gem install ebo_cli_project
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/controller` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
