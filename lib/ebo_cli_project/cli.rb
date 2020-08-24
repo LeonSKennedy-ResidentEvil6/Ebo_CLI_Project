@@ -57,8 +57,7 @@ class NewsFeedProject::Cli
             num = gets.strip
             article = NewsFeedProject::Article.all[num.to_i - 1]
             puts "#{article.title}"
-            puts "Description: #{article.description}"
-            puts "#{article.content}"
+            puts "Content: #{article.content}"
             puts "Author: #{article.author}"
             puts "Published Date: #{article.publishedAt}"
             puts "Publisher URL: #{article.url}"
