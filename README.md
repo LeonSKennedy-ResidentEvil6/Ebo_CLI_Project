@@ -16,7 +16,7 @@ This news feed app is meant to search news articles from various sources on the 
 
 Ruby 2.5+ must be already installed:
 
-- apt (Debian or Ubuntu)
+apt (Debian or Ubuntu)
 $ sudo apt-get install ruby-full
 
 yum (CentOS, Fedora, or RHEL)
@@ -39,14 +39,13 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it as:
 
     $ gem install ebo_cli_project
 
 ## Quick start
 
 In your terminal, run `bin/controller` for an interactive prompt that will allow you to experiment.
-
 
 ## Contributing
 
