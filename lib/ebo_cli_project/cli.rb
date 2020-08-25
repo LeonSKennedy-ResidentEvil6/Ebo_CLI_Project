@@ -36,21 +36,21 @@ class NewsFeedProject::Cli
       end 
 
       #methods
-
+        # search articles with entered keyword from user
         def search_article
           puts "type a keyword to search: "
           keyword = gets.strip
           NewsFeedProject::ApiService.search_news_by_article_title(keyword)
           menu
         end 
-            
+        # display list of articles in cli 
         def list_articles_by_title
           NewsFeedProject::Article.all.each.with_index(1) do |a, i|
             puts "#{i}. #{a.title}"
           end 
           menu
         end 
-
+        # open an article along with attributes
         def open_article
 
             puts "enter an number of an article to open: "
@@ -83,7 +83,7 @@ class NewsFeedProject::Cli
                 end
              end 
          end 
-
+         
         def clear_articles
           NewsFeedProject::Article.clear
           puts "result has been cleared."

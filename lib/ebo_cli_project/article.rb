@@ -6,7 +6,6 @@ class NewsFeedProject::Article
 
     def initialize(articles_hash)
         articles_hash.each do |key, value|
-            # return false if attribute does not exist
             if self.respond_to?(key)
              self.send("#{key}=", value)
             end 
